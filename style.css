@@ -1,0 +1,31 @@
+body {
+  background-color: black;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes burning {
+  0% {
+    color: #ff3;
+    text-shadow: 0 0 4px #ff3, 0 0 10px #ff3, 0 0 20px #ff3, 0 0 40px #f90, 0 0 80px #f90, 0 0 90px #f90, 0 0 100px #f90, 0 0 150px #f90;
+  }
+  50% {
+    color: #ff6;
+    text-shadow: 0 0 4px #ff6, 0 0 10px #ff6, 0 0 20px #ff6, 0 0 40px #f60, 0 0 80px #f60, 0 0 90px #f60, 0 0 100px #f60, 0 0 150px #f60;
+  }
+  100% {
+    color: #ff9;
+    text-shadow: 0 0 4px #ff9, 0 0 10px #ff9, 0 0 20px #ff9, 0 0 40px #f30, 0 0 80px #f30, 0 0 90px #f30, 0 0 100px #f30, 0 0 150px #f30;
+  }
+}
+
+.fire-text {
+  font-size: 72px;
+  font-weight: bold;
+  color: #ff3;
+  text-shadow: 0 0 4px #ff3, 0 0 10px #ff3, 0 0 20px #ff3, 0 0 40px #f90, 0 0 80px #f90, 0 0 90px #f90, 0 0 100px #f90, 0 0 150px #f90;
+  animation: burning 3s infinite;
+}
