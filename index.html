@@ -3,31 +3,60 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Doom Tech</title>
-<link rel="stylesheet" href="style.css">
+<title>Doom Tech - Визитка</title>
 <style>
   body, html {
     height: 100%;
     margin: 0;
-    font-family: Arial, sans-serif;
+    padding: 0;
+    overflow: hidden;
   }
-  .centered {
+
+  .blurred-background {
+    filter: blur(8px);
+    position: fixed; 
+    left: 0;
+    right: 0;
+    z-index: -1;
+
+    display: block;
+    background-image: url('https://p16-flow-sign-va.ciciai.com/ocean-cloud-tos-us/1b15210c6dd7472783608d6ee7c2a7c0.png~tplv-6bxrjdptv7-image.png?rk3s=18ea6f23&x-expires=1748623169&x-signature=3DB4cr%2F88v%2BwhRKPmJN2HlTqcdk%3D');
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .content {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    color: white;
+    font-family: Arial, sans-serif;
     text-align: center;
   }
-  .title {
-    font-size: 50px;
-    color: #333;
+
+
+  .focused-logo {
+    background-image: url('https://p16-flow-sign-va.ciciai.com/ocean-cloud-tos-us/1b15210c6dd7472783608d6ee7c2a7c0.png~tplv-6bxrjdptv7-image.png?rk3s=18ea6f23&x-expires=1748623169&x-signature=3DB4cr%2F88v%2BwhRKPmJN2HlTqcdk%3D');
+    height: 300px;
+    width: 600px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: auto;
   }
 </style>
 </head>
 <body>
 
-<div class="centered">
-  <div class="title">Doom Tech</div>
+<div class="blurred-background"></div>
+
+<div class="content">
+  <div class="focused-logo">
+  </div>
 </div>
 
 </body>
