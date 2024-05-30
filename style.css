@@ -13,6 +13,12 @@ body {
   overflow:hidden;
 }
 .circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Высота должна быть выставлена для вертикального центрирования */
+  font-size: 50px; /* Размер текста, может быть изменён по вашему усмотрению */
+  text-align: center; /* Центрирование текста внутри блока, если flex-свойства не работают */
   position: absolute;
   left: 50%;
   top: 50%;
