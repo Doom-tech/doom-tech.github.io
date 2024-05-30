@@ -12,7 +12,20 @@ body {
   overflow: hidden;
 }
 
-
+.circle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: var(--size);
+  height: var(--size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: red; /* Color of the text */
+  font-size: 12vw; /* Size of the text */
+  font-family: 'Arial', sans-serif; /* Font of the text */
+}
 
 .circle:before,
 .circle:after {
