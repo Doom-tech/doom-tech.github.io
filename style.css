@@ -30,7 +30,7 @@ body {
   left: var(--s);
   right: var(--s);
   bottom: var(--s);
-  border-radius: 100%;
+  border-radius: 50%;
   border: var(--bor) solid #fff;
 }
 .circle:before {
