@@ -3,18 +3,67 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
 <title>Doom Tech</title>
-<link rel="stylesheet" href="styles.css">
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .blur-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(8px);
+  }
+
+  .circle {
+    z-index: 1;
+    width: 300px;
+    height: 300px;
+    background-color: transparent;
+    border: 3px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: red;
+    font-size: 3em;
+    font-family: Arial, sans-serif;
+    filter: url('#wavy');
+  }
+
+  .blur-content {
+    filter: blur(8px);
+  }
+</style>
 </head>
 <body>
-<div class="circle">Doom</div>
-<svg>
+
+<div class="blur-overlay"></div>
+
+<svg style="height: 0; width: 0;">
   <filter id="wavy">
     <feTurbulence x="0" y="0" baseFrequency="0.009" numOctaves="5" speed="2">
-      <animate attributeName="baseFrequency" dur="60s" values="0.02; 0.005; 0.02" repeatCount="indefinite"></animate>
+      <animate attributeName="baseFrequency" dur="60s" values="0.02; 0.005; 0.02" repeatCount="indefinite" />
     </feTurbulence>
-    <feDisplacementMap in="SourceGraphic" scale="30"></feDisplacementMap>
+    <feDisplacementMap in="SourceGraphic" scale="30" />
   </filter>
 </svg>
+
+<div class="circle">Doom</div>
+
+<div class="blur-content">
+  <!-- Any content to be blurred goes here -->
+</div>
+
 </body>
 </html>
