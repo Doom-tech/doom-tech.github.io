@@ -5,26 +5,46 @@
   --boxShadow: calc(var(--size) / 12);
 }
 
-body {
+body, html {
+  height: 100%;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  background-color: #000;
-  overflow: hidden;
+  background-color: black;
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 100vh;
+  justify-content: center;
+}
+
+.blur-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(8px);
+}
+
+.blur-content {
+  filter: blur(8px);
 }
 
 .circle {
-  position: relative;
-  width: var(--size);
-  height: var(--size);
-  border-radius: 50%;
-  background-color: transparent;
-  filter: url(#wavy) blur(1px);
+  z-index: 1;
+  width: 300px; /* Adjust size as needed */
+  height: 300px; /* Adjust size as needed */
+  background-color: transparent; /* No fill for the ring */
+  border: 3px solid white; /* Adjust the color and size as needed */
+  border-radius: 50%; /* This makes the div a circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3em; /* Adjust text size as needed */
+  font-family: Arial, sans-serif; /* Choose your font */
+  filter: url('#wavy'); /* Applying the SVG wavy filter */
+  color: red; /* Make the text red */
 }
+
+/* Other styles remain the same */
 
 .circle:before,
 .circle:after {
