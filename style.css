@@ -44,35 +44,7 @@ body, html {
   color: red; /* Make the text red */
 }
 
-/* Other styles remain the same */
 
-.circle:before,
-.circle:after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  border: var(--bor) solid #fff;
-}
-
-.circle:before {
-  top: var(--s);
-  left: var(--s);
-  right: var(--s);
-  bottom: var(--s);
-  box-shadow: 0 0 var(--boxShadow) #0f0, inset 0 0 var(--boxShadow) #0f0;
-  -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0002);
-  animation: move 5s linear infinite;
-}
-
-.circle:after {
-  top: calc(2 * var(--s));
-  left: calc(2 * var(--s));
-  right: calc(2 * var(--s));
-  bottom: calc(2 * var(--s));
-  box-shadow: 0 0 calc(var(--bor)/2) #fff, inset 0 0 var(--bor) #fff;
-}
-
-/* Анимация и остальные элементы остаются без изменений */
 
 @keyframes move {
   0% {
