@@ -1,7 +1,5 @@
 :root {
   --size: 110vh;
-  --s: calc(var(--size) / 6);
-  --bor: calc(var(--size) / 30);
   --boxShadow: calc(var(--size) / 12);
 }
 
@@ -15,50 +13,33 @@ body, html {
   justify-content: center;
 }
 
-.blur-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  backdrop-filter: blur(8px);
-}
-
-.blur-content {
-  filter: blur(8px);
-}
-
 .circle {
   z-index: 1;
-  width: 300px; /* Adjust size as needed */
-  height: 300px; /* Adjust size as needed */
-  background-color: transparent; /* No fill for the ring */
-  border: 3px solid white; /* Adjust the color and size as needed */
-  border-radius: 50%; /* This makes the div a circle */
+  width: 300px; /* Размер можно настроить по необходимости */
+  height: 300px; /* Размер можно настроить по необходимости */
+  background-color: transparent; /* Устанавливаем прозрачный фон для кольца */
+  border: 3px solid white; /* Выбираем цвет и толщину границы по необходимости */
+  border-radius: 50%; /* Сделает div круглым */
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 3em; /* Adjust text size as needed */
-  font-family: Arial, sans-serif; /* Choose your font */
-  filter: url('#wavy'); /* Applying the SVG wavy filter */
-  color: red; /* Make the text red */
+  font-size: 3em; /* Размер текста можно настроить по необходимости */
+  font-family: Arial, sans-serif; /* Выбираем шрифт */
+  filter: url('#wavy'); /* Применяем SVG фильтр "wavy" */
+  color: red; /* Делаем текст красным */
+  animation: move 5s linear infinite;
 }
-
-
 
 @keyframes move {
   0% {
-    box-shadow: 0 0 var(--boxShadow) #0f0, inset 0 0 var(--boxShadow) #0f0;
+    box-shadow: 0 0 var(--boxShadow) #0f0;
     filter: hue-rotate(0deg);
   }
-  /* ... other keyframes ... */
+  /* ... другие ключевые кадры ... */
   100% {
-    box-shadow: 0 0 var(--boxShadow) #0f0, inset 0 0 var(--boxShadow) #0f0;
+    box-shadow: 0 0 var(--boxShadow) #0f0;
     filter: hue-rotate(360deg);
   }
 }
 
-svg {
-  width: 0;
-  height: 0;
-}
+svg { display: none; } /* Если не используем SVG, скроем его */
