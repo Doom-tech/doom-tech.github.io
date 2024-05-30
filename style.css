@@ -1,17 +1,62 @@
+:root {
+  --size: 110vh;
+  --s: calc(var(--size) / 6);
+  --bor: calc(var(--size) / 30);
+  --boxShadow: calc(var(--size) / 12);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #000;
+  overflow: hidden;
+}
+
 .circle {
-  z-index: 1;
-  width: 300px; /* Adjust size as needed */
-  height: 300px; /* Adjust size as needed */
-  background-color: transparent; /* No fill for the ring */
-  border: 3px solid white; /* Adjust the color and size as needed */
-  border-radius: 50%; /* This makes the div a circle */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: var(--size);
+  height: var(--size);
+  filter: url(#wavy) blur(1px);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 3em; /* Adjust text size as needed */
-  font-family: Arial, sans-serif; /* Choose your font */
-  filter: url('#wavy'); /* Applying the SVG wavy filter */
-  color: red; /* Make the text red */
+  color: red; /* Color of the text */
+  font-size: 12vw; /* Size of the text */
+  font-family: 'Arial', sans-serif; /* Font of the text */
 }
 
-/* Other styles remain the same */
+.circle:before,
+.circle:after {
+  content: "";
+  position: absolute;
+  top: var(--s);
+  left: var(--s);
+  right: var(--s);
+  bottom: var(--s);
+  border-radius: 50%;
+  border: var(--bor) solid #fff;
+}
+
+.circle:before {
+  box-shadow: 0 0 var(--boxShadow) #ff0000, inset 0 0 var(--boxShadow) rgba(255, 0, 0, 0.5);
+  animation: move 5s linear infinite;
+  border-color: #ff0000; /* Color of the ring */
+}
+
+.circle:after {
+  box-shadow: 0 0 calc(var(--bor)/2) #fff, inset 0 0 var(--bor) #fff;
+}
+
+@keyframes move {
+  /* ... Your animation keyframes ... */
+  /* You can keep these the same unless you want to change the animation color effect to match the red theme */
+}
+
+svg {
+  width: 0;
+  height: 0;
+}
