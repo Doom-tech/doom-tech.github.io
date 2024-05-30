@@ -2,7 +2,6 @@
   --size: 110vh;
   --s: calc(var(--size) / 6);
   --bor: calc(var(--size) / 30);
-  --boxShadow: calc(var(--size) / 12);
 }
 
 body {
@@ -20,7 +19,6 @@ body {
   transform: translate(-50%, -50%);
   width: var(--size);
   height: var(--size);
-  filter: url(#wavy) blur(1px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,21 +40,13 @@ body {
 }
 
 .circle:before {
-  box-shadow: 0 0 var(--boxShadow) #ff0000, inset 0 0 var(--boxShadow) rgba(255, 0, 0, 0.5);
-  animation: move 5s linear infinite;
-  border-color: #ff0000; /* Color of the ring */
+  border-color: red; /* Color of the ring */
 }
 
 .circle:after {
-  box-shadow: 0 0 calc(var(--bor)/2) #fff, inset 0 0 var(--bor) #fff;
-}
-
-@keyframes move {
-  /* ... Your animation keyframes ... */
-  /* You can keep these the same unless you want to change the animation color effect to match the red theme */
+  box-shadow: 0 0 0 #fff, inset 0 0 0 #fff;
 }
 
 svg {
-  width: 0;
-  height: 0;
+  display: none; /* Hides the SVG filter definitions since they're not needed anymore */
 }
