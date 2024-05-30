@@ -12,22 +12,23 @@ body {
   overflow: hidden;
 }
 
-.circle {
+
+
+.circle:before,
+.circle:after {
+  content: "";
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: var(--size);
-  height: var(--size);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: red; /* Color of the text */
-  font-size: 12vw; /* Size of the text */
-  font-family: 'Arial', sans-serif; /* Font of the text */
+  top: var(--s);
+  left: var(--s);
+  right: var(--s);
+  bottom: var(--s);
+  border-radius: 50%;
+  border: var(--bor) solid #fff;
 }
 
-
+.circle:before {
+  border-color: red; /* Color of the ring */
+}
 
 .circle:after {
   box-shadow: 0 0 0 #fff, inset 0 0 0 #fff;
