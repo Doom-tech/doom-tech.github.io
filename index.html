@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
 <title>Doom Tech</title>
 <style>
   body, html {
@@ -24,17 +25,20 @@
     backdrop-filter: blur(8px);
   }
 
-  .focused-logo {
+  .circle {
     z-index: 1;
-    background-image: url('https://p16-flow-sign-va.ciciai.com/ocean-cloud-tos-us/1b15210c6dd7472783608d6ee7c2a7c0.png~tplv-6bxrjdptv7-image.png?rk3s=18ea6f23&x-expires=1748623169&x-signature=3DB4cr%2F88v%2BwhRKPmJN2HlTqcdk%3D');
-    height: 300px;
-    width: 600px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
+    width: 300px; /* Adjust size as needed */
+    height: 300px; /* Adjust size as needed */
+    background-color: transparent;
+    border-radius: 50%; /* This makes the div a circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; /* Text color */
+    font-size: 3em; /* Adjust text size as needed */
+    font-family: Arial, sans-serif; /* Choose your font */
+    filter: url('#wavy'); /* Applying the wavy filter */
   }
-
-  
 
   .blur-content {
     filter: blur(8px);
@@ -43,22 +47,21 @@
 </head>
 <body>
 
-<div class="blur-overlay"></div> 
-<div class="circle"></div>
-<svg>
+<div class="blur-overlay"></div>
+
+<svg style="height: 0; width: 0;">
   <filter id="wavy">
     <feTurbulence x="0" y="0" baseFrequency="0.009" numOctaves="5" speed="2">
-      <animate attributeName="baseFrequency" dur="60s" values="0.02; 0.005; 0.02" repeatCount="indefinite">
+      <animate attributeName="baseFrequency" dur="60s" values="0.02; 0.005; 0.02" repeatCount="indefinite" />
     </feTurbulence>
-    <feDisplacementMap in="SourceGraphic" scale="30"></feTurbulence>
+    <feDisplacementMap in="SourceGraphic" scale="30" />
   </filter>
 </svg>
-<div class="focused-logo">
 
-</div>
+<div class="circle">Doom</div>
 
 <div class="blur-content">
-
+  <!-- Any content to be blurred goes here -->
 </div>
 
 </body>
