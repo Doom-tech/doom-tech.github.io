@@ -27,21 +27,7 @@ body {
   font-family: 'Arial', sans-serif; /* Font of the text */
 }
 
-.circle:before,
-.circle:after {
-  content: "";
-  position: absolute;
-  top: var(--s);
-  left: var(--s);
-  right: var(--s);
-  bottom: var(--s);
-  border-radius: 50%;
-  border: var(--bor) solid #fff;
-}
 
-.circle:before {
-  border-color: red; /* Color of the ring */
-}
 
 .circle:after {
   box-shadow: 0 0 0 #fff, inset 0 0 0 #fff;
