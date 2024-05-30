@@ -5,20 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
 <title>Doom Tech</title>
-<div class="circle"></div>
-<svg>
+</head>
+<body>
+
+<svg style="height: 0; width: 0;">
   <filter id="wavy">
     <feTurbulence x="0" y="0" baseFrequency="0.009" numOctaves="5" speed="2">
-      <animate attributeName="baseFrequency" dur="60s" values="0.02; 0.005; 0.02" repeatCount="indefinite">
+      <animate attributeName="baseFrequency" dur="60s" values="0.02; 0.005; 0.02" repeatCount="indefinite"></animate>
     </feTurbulence>
-    <feDisplacementMap in="SourceGraphic" scale="30"></feTurbulence>
+    <feDisplacementMap in="SourceGraphic" scale="30"></feDisplacementMap>
   </filter>
 </svg>
 
+<!-- Проверьте CSS, чтобы убедиться, что вы применяете вышеуказанные стили к этому элементу -->
 <div class="circle">Doom</div>
 
 <div class="blur-content">
-  <!-- Any content to be blurred goes here -->
+  <!-- Содержимое, которое будет размыто, поместите здесь -->
 </div>
 
 </body>
